@@ -25,10 +25,10 @@
         <div class="col-md-12 col-lg-6">
             <form th:object="${insertRecord}" method="POST">
                 <div class="form-group">
-                    <!-- -->
+                     
                     <label for="data">Name</label>
                     <input id="data" type="text" class="form-control" placeholder="Name" th:field="*{data}" />
-                    
+                    <!--
                     <label for="name">Name</label>
                     <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}" />
                     <label for="lastName">LastName</label>
@@ -39,6 +39,7 @@
                     <input id="phone" type="text" class="form-control" placeholder="Phone" th:field="*{phone}" />
                     <label for="email">Email</label>
                     <input id="email" type="text" class="form-control" placeholder="Email" th:field="*{email}" />
+                    -->
                 </div>
                 <button type="submit" class="btn btn-default">Enter</button>
             </form>
