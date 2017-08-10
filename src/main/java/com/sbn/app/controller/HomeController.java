@@ -48,7 +48,7 @@ public class HomeController
         model.addAttribute("insertRecord", new Record());
         //######################################################################
         List<Client> clients = clientRepository.findAll();
-        model.addAttribute("client", clients);
+        model.addAttribute("clients", clients);
         model.addAttribute("insertClient", new Client());
         //######################################################################
         return "home";
@@ -66,17 +66,17 @@ public class HomeController
         return home(model);
     }    
     //##########################################################################
-    @RequestMapping(method = RequestMethod.POST)
-    public String insertName(ModelMap model, 
-                             @ModelAttribute("insertClient") @Valid Client client,
-                             BindingResult result) 
-    {
-        if (!result.hasErrors()) 
-        {
-            clientRepository.save(client);
-        }
-        return home(model);
-    }     
+//    @RequestMapping(method = RequestMethod.POST)
+//    public String insertName(ModelMap model, 
+//                             @ModelAttribute("insertClient") @Valid Client client,
+//                             BindingResult result) 
+//    {
+//        if (!result.hasErrors()) 
+//        {
+//            clientRepository.save(client);
+//        }
+//        return home(model);
+//    }     
     //##########################################################################
     //##########################################################################
 }
