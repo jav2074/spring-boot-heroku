@@ -47,6 +47,7 @@
                 </thead>
                 <tbody>
                     <tr th:each="client : ${client}">
+                        <td th:text="${client.id}">Some text</td>
                         <td th:text="${client.name}">Some text</td>
                         <td th:text="${client.lastname}">Some text</td>
                         <td th:text="${client.address}">Some text</td>
