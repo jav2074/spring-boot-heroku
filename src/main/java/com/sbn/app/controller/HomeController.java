@@ -29,11 +29,16 @@ public class HomeController
 
     
     //##########################################################################
+//    @Autowired
+//    public HomeController(RecordRepository repository, ClientRepository clientRepository)
+//    {
+//        this.repository = repository;
+//        this.clientRepository = clientRepository;
+//    }
     @Autowired
-    public HomeController(RecordRepository repository, ClientRepository clientRepository) 
+    public HomeController(RecordRepository repository ) 
     {
         this.repository = repository;
-        this.clientRepository = clientRepository;
     }
     //##########################################################################
 
@@ -47,9 +52,9 @@ public class HomeController
         model.addAttribute("records", records);
         model.addAttribute("insertRecord", new Record());
         //######################################################################
-        List<Client> clients = clientRepository.findAll();
-        model.addAttribute("client", clients);
-        model.addAttribute("insertClient", new Client());
+//        List<Client> clients = clientRepository.findAll();
+//        model.addAttribute("client", clients);
+//        model.addAttribute("insertClient", new Client());
         //######################################################################
         return "home";
     }
@@ -66,17 +71,17 @@ public class HomeController
         return home(model);
     }    
     //##########################################################################
-    @RequestMapping(method = RequestMethod.POST)
-    public String insertDBClient(ModelMap model, 
-                             @ModelAttribute("insertClient") @Valid Client client,
-                             BindingResult result) 
-    {
-        if (!result.hasErrors()) 
-        {
-            clientRepository.save(client);
-        }
-        return home(model);
-    }     
+//    @RequestMapping(method = RequestMethod.POST)
+//    public String insertClient(ModelMap model, 
+//                             @ModelAttribute("insertClient") @Valid Client client,
+//                             BindingResult result) 
+//    {
+//        if (!result.hasErrors()) 
+//        {
+//            clientRepository.save(client);
+//        }
+//        return home(model);
+//    }     
     //##########################################################################
     //##########################################################################
 }
