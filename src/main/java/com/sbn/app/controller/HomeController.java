@@ -66,17 +66,17 @@ public class HomeController
         return home(model);
     }    
     //##########################################################################
-//    @RequestMapping(method = RequestMethod.POST)
-//    public String insertDBClient(ModelMap model, 
-//                             @ModelAttribute("insertClient") @Valid Client client,
-//                             BindingResult result) 
-//    {
-//        if (!result.hasErrors()) 
-//        {
-//            clientRepository.save(client);
-//        }
-//        return home(model);
-//    }     
+    @RequestMapping(method = RequestMethod.POST)
+    public String insertName(ModelMap model, 
+                             @ModelAttribute("insertClient") @Valid Client client,
+                             BindingResult result) 
+    {
+        if (!result.hasErrors()) 
+        {
+            clientRepository.save(client);
+        }
+        return home(model);
+    }     
     //##########################################################################
     //##########################################################################
 }
