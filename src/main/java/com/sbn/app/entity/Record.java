@@ -1,4 +1,4 @@
-package com.sbn.app;
+package com.sbn.app.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

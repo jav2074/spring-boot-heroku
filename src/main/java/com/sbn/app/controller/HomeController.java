@@ -1,8 +1,10 @@
 /*
 HEROKU - morning-shore-81565
  */
-package com.sbn.app;
+package com.sbn.app.controller;
 
+import com.sbn.app.entity.Record;
+import com.sbn.app.entity.RecordRepository;
 import javax.validation.Valid;
 import java.util.List;
 

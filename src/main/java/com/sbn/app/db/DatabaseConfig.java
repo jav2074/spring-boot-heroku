@@ -1,4 +1,4 @@
-package com.sbn.app;
+package com.sbn.app.db;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
