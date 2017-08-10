@@ -67,7 +67,7 @@ public class HomeController
     }    
     //##########################################################################
     @RequestMapping(method = RequestMethod.POST)
-    public String insertClient(ModelMap model, 
+    public String insertDBClient(ModelMap model, 
                              @ModelAttribute("insertClient") @Valid Client client,
                              BindingResult result) 
     {
