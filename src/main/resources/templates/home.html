@@ -48,6 +48,10 @@
                 <tbody>
                     <tr th:each="client : ${client}">
                         <td th:text="${client.name}">Some text</td>
+                        <td th:text="${client.lastname}">Some text</td>
+                        <td th:text="${client.address}">Some text</td>
+                        <td th:text="${client.phone}">Some text</td>
+                        <td th:text="${client.email}">Some text</td>
                     </tr>
                 </tbody>
             </table>
