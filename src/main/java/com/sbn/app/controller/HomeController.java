@@ -49,7 +49,7 @@ public class HomeController
         //######################################################################
         List<Client> clients = clientRepository.findAll();
         model.addAttribute("client", clients);
-        model.addAttribute("insertClient", new Record());
+        model.addAttribute("insertClient", new Client());
         //######################################################################
         return "home";
     }
