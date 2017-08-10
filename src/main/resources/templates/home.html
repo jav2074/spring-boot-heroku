@@ -14,21 +14,14 @@
 </head>
 <body>
 <div class="container">
+    <!-- ################################################################### -->
     <div class="page-header">
-        <!--
-        <h1>Spring Boot Heroku Example</h1>
-        -->
-        <h1>CRUD Spring</h1>
+        <h1>Client - CRUD Spring</h1>
     </div>
-
     <div class="row">
         <div class="col-md-12 col-lg-6">
-            <form th:object="${insertRecord}" method="POST">
+            <form th:object="${insertClient}" method="POST">
                 <div class="form-group">   
-                    <label for="data">Data</label>
-                    <input id="data" type="text" class="form-control" placeholder="Data" th:field="*{data}" />
-                    <br/>
-                    <!--                    
                     <label>Name</label>
                     <input id="name" type="text" class="form-control" placeholder="Name"/>
                     <label>LastName</label>                    
@@ -39,13 +32,43 @@
                     <input id="phone" type="text" class="form-control" placeholder="Phone" />
                     <label>Email</label>
                     <input id="email" type="text" class="form-control" placeholder="Email" />
-                    -->
                 </div>
-                <button type="submit" class="btn btn-default">Enter</button>
+                <button type="submit" class="btn btn-default">Enter Client</button>
             </form>
         </div>
     </div>
-
+    <hr />
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Client Records</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="client : ${client}">
+                        <td th:text="${client.name}">Some text</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>    
+    <!-- ################################################################### -->
+    <div class="page-header">
+        <h1>Data - CRUD Spring</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <form th:object="${insertRecord}" method="POST">
+                <div class="form-group">   
+                    <label for="data">Data</label>
+                    <input id="data" type="text" class="form-control" placeholder="Data" th:field="*{data}" />
+                </div>
+                <button type="submit" class="btn btn-default">Enter Data</button>
+            </form>
+        </div>
+    </div>
     <hr />
     <div class="row">
         <div class="col-sm-12">
@@ -63,6 +86,7 @@
             </table>
         </div>
     </div>
+    <!-- ################################################################### -->
 </div>
 
 <!-- Latest compiled and minified JavaScript -->
