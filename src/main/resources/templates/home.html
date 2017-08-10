@@ -24,23 +24,19 @@
     <div class="row">
         <div class="col-md-12 col-lg-6">
             <form th:object="${insertRecord}" method="POST">
-                <div class="form-group">                     
+                <div class="form-group">   
                     <label for="data">Data</label>
                     <input id="data" type="text" class="form-control" placeholder="Data" th:field="*{data}" />
-                    
-                    <br/>                    
+                    <br/>
+                    <!-- -->                   
                     <label>Name</label>
                     <input id="name" type="text" class="form-control" placeholder="Name"/>
-                    <br/>                    
                     <label>LastName</label>                    
                     <input id="lastName" type="text" class="form-control" placeholder="Last Name" />
-                    <br/>
                     <label>Address</label>
                     <input id="address" type="text" class="form-control" placeholder="Address" />
-                    <br/>
                     <label>Phone</label>
                     <input id="phone" type="text" class="form-control" placeholder="Phone" />
-                    <br/>
                     <label>Email</label>
                     <input id="email" type="text" class="form-control" placeholder="Email" />
                     <!-- -->
