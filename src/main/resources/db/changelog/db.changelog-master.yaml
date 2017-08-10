@@ -18,6 +18,8 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: false
+                    
+databaseChangeLog:
   - changeSet:
       id: 1
       author: jsibona
