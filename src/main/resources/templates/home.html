@@ -46,7 +46,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="client : ${clients}">
+                    <tr th:each="client : ${client}">
                         <td th:text="${client.id}">Some text</td>
                         <td th:text="${client.name}">Some text</td>
                         <td th:text="${client.lastname}">Some text</td>
@@ -81,7 +81,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Records</th>
+                        <th>Data Records</th>
                     </tr>
                 </thead>
                 <tbody>
