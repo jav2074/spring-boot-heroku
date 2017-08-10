@@ -29,16 +29,11 @@ public class HomeController
 
     
     //##########################################################################
-//    @Autowired
-//    public HomeController(RecordRepository repository, ClientRepository clientRepository)
-//    {
-//        this.repository = repository;
-//        this.clientRepository = clientRepository;
-//    }
     @Autowired
-    public HomeController(RecordRepository repository ) 
+    public HomeController(RecordRepository repository, ClientRepository clientRepository)
     {
         this.repository = repository;
+        this.clientRepository = clientRepository;
     }
     //##########################################################################
 
