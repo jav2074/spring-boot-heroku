@@ -86,6 +86,7 @@
                 </thead>
                 <tbody>
                     <tr th:each="record : ${records}">
+                        <td th:text="${record.id}">Some text</td>
                         <td th:text="${record.data}">Some text</td>
                     </tr>
                 </tbody>
