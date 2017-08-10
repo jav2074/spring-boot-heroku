@@ -1,4 +1,4 @@
-package com.heroku.demo;
+package com.sbn.app;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

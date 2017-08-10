@@ -1,7 +1,7 @@
 /*
 HEROKU - morning-shore-81565
  */
-package com.heroku.demo;
+package com.sbn.app;
 
 import javax.validation.Valid;
 import java.util.List;
