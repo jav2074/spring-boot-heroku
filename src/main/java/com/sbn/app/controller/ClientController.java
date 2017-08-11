@@ -5,8 +5,6 @@ package com.sbn.app.controller;
 
 import com.sbn.app.entity.Client;
 import com.sbn.app.entity.ClientRepository;
-import com.sbn.app.entity.Record;
-import com.sbn.app.entity.RecordRepository;
 import javax.validation.Valid;
 import java.util.List;
 
