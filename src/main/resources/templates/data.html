@@ -82,9 +82,11 @@
                     <tbody>
                         <tr th:each="record : ${records}">
                             <!--  -->
-                            <td th:text="${record.data}">Some text</td>
-                            <td><button type="submit" class="btn btn-default">UpDate Data</button></td>
-                            <td><button type="submit" class="btn btn-default">Delete Data</button></td>
+                            <form th:object="${UDRecord}" method="POST">
+                                <td th:text="${record.data}">Some text</td>
+                                <td><button type="submit" class="btn btn-default">UpDate</button></td>
+                                <td><button type="submit" class="btn btn-default">Delete</button></td>
+                            </form>
                         </tr>
                     </tbody>
                 </table>
