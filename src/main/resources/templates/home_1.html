@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+    HEROKU - morning-shore-81565
+--> 
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>My CRUD Spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Optional theme --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+</head>
+<body>
+    <!-- ################################################################### -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <!-- ########################################################### -->
+                <li> <!-- https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAlaAAAAJDRiODU4NjQ2LWVhODctNDkyNy05ZGQwLTljYjkxMmJkYmQzNw.png -->
+                        <img 
+                            src="http://4.bp.blogspot.com/-xzodOH4rIr4/UyPckEp3knI/AAAAAAAANk8/M8HIaeXmS3s/s1600/Logo+Mitrol.png" 
+                            width="50" 
+                            height="50"></img>
+                </li>
+                <!-- ########################################################### -->
+                <li class="active">
+                    <a rel="nofollow" href="/">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Home
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/client">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                        Clients
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/data">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                        Data
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+            </ul>
+        </div>
+    </nav>
+    <br/>
+    <!-- ################################################################### -->
+    <div class="container">
+        <!-- ################################################################### -->
+        <div class="page-header">
+            <h1>Client - CRUD Spring</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <form th:object="${insertClient}" method="POST">
+                    <div class="form-group">   
+                        <label>Name</label>
+                        <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}"/>
+                        <label>LastName</label>                    
+                        <input id="lastname" type="text" class="form-control" placeholder="Last Name" th:field="*{lastname}"/>
+                        <label>Address</label>
+                        <input id="address" type="text" class="form-control" placeholder="Address" th:field="*{address}"/>
+                        <label>Phone</label>
+                        <input id="phone" type="text" class="form-control" placeholder="Phone" th:field="*{phone}"/>
+                        <label>Email</label>
+                        <input id="email" type="text" class="form-control" placeholder="Email" th:field="*{email}"/>
+                    </div>
+                    <button type="submit" class="btn btn-default">Enter Client</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Client Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="client : ${clients}">
+                            <td th:text="${client.id}">Some text</td>
+                            <td th:text="${client.name}">Some text</td>
+                            <td th:text="${client.lastname}">Some text</td>
+                            <td th:text="${client.address}">Some text</td>
+                            <td th:text="${client.phone}">Some text</td>
+                            <td th:text="${client.email}">Some text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- ################################################################### -->
+        <hr />
+        <!-- ################################################################### -->
+        <div class="page-header">
+            <h1>Data - CRUD Spring</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <form th:object="${insertRecord}" method="POST">
+                    <div class="form-group">   
+                        <label for="data">Data</label>
+                        <input id="data" type="text" class="form-control" placeholder="Data" th:field="*{data}" />
+                    </div>
+                    <button type="submit" class="btn btn-default">Enter Data</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Data Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="record : ${records}">
+                            <!--  -->
+                            <td th:text="${record.data}">Some text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- ################################################################### -->
+    </div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
