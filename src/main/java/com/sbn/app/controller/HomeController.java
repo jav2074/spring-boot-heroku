@@ -3,6 +3,8 @@ HEROKU - morning-shore-81565
  */
 package com.sbn.app.controller;
 
+import com.sbn.app.entity.Client;
+import com.sbn.app.entity.ClientRepository;
 import com.sbn.app.entity.Record;
 import com.sbn.app.entity.RecordRepository;
 import java.util.List;
@@ -18,12 +20,15 @@ public class HomeController
 {
     //##########################################################################
     private RecordRepository repository;
+    private ClientRepository clientRepository;
+    //##########################################################################
     
     //##########################################################################
     @Autowired
-    public HomeController(RecordRepository repository)
+    public HomeController(RecordRepository repository, ClientRepository clientRepository)
     {
         this.repository = repository;
+        this.clientRepository = clientRepository;
     }
     //##########################################################################
 
@@ -35,8 +40,10 @@ public class HomeController
         //######################################################################
         List<Record> records = repository.findAll();
         model.addAttribute("records", records);
-//        model.addAttribute("insertRecord", new Record());
-        //#####################################################################
+        //######################################################################
+        List<Client> clients = clientRepository.findAll();
+        model.addAttribute("clients", clients);
+        //######################################################################
         return "home";
     }
     //##########################################################################
