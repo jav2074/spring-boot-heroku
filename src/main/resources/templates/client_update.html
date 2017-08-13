@@ -64,17 +64,17 @@
                 <form th:object="${insertClient}" action="/client" method="POST">
                     <div class="form-group">   
                         <label>Id</label>  <!--  th:field="*{id}" -->
-                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${clientUD.id}" disabled="true" />
+                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${client.id}" disabled="true" />
                         <label>Name</label>
-                        <input th:id="name" th:name="name" type="text" class="form-control" th:field="${clientUD.name}"/>
+                        <input th:id="name" th:name="name" type="text" class="form-control" th:field="${client.name}"/>
                         <label>LastName</label>                    
-                        <input th:id="lastname" th:name="lastname" type="text" class="form-control" th:field="${clientUD.lastname}"/>
+                        <input th:id="lastname" th:name="lastname" type="text" class="form-control" th:field="${client.lastname}"/>
                         <label>Address</label>
-                        <input th:id="address" th:name="address" type="text" class="form-control" th:field="${clientUD.address}"/>
+                        <input th:id="address" th:name="address" type="text" class="form-control" th:field="${client.address}"/>
                         <label>Phone</label>
-                        <input th:id="phone" th:name="phone" type="text" class="form-control" th:field="${clientUD.phone}"/>
+                        <input th:id="phone" th:name="phone" type="text" class="form-control" th:field="${client.phone}"/>
                         <label>Email</label>
-                        <input th:id="email" th:name="email" type="text" class="form-control" th:field="${clientUD.email}"/>
+                        <input th:id="email" th:name="email" type="text" class="form-control" th:field="${client.email}"/>
                     </div>
                     <button type="submit" class="btn btn-info">Update Client</button>
                 </form>
