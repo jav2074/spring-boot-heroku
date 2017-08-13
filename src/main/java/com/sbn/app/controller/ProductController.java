@@ -36,7 +36,7 @@ public class ProductController
     
     //##########################################################################
     @RequestMapping(method = RequestMethod.GET)
-    public String client(ModelMap model) 
+    public String product(ModelMap model) 
     {
         //######################################################################
         List<Product> products = productRepository.findAll();
@@ -55,7 +55,7 @@ public class ProductController
         {
             productRepository.save(product);
         }
-        return client(model);
+        return product(model);
     }     
     //##########################################################################
     //##########################################################################
