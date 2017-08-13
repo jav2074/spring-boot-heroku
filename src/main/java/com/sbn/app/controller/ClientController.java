@@ -54,7 +54,7 @@ public class ClientController
     {
         if (!result.hasErrors()) 
         {
-            clientRepository.save(client);
+            clientRepository.saveAndFlush(client);  // saveOrUpdate / save / saveAndFlush
         }
         return client(model);
     }     
