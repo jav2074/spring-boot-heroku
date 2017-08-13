@@ -66,7 +66,7 @@ public class ClientController
     {
         //######################################################################
         Client client = clientRepository.findOne(Long.parseLong(strID));
-        model.addAttribute("client", client);
+        model.addAttribute("clientUD", client);
         model.addAttribute("insertClient", new Client());
         //######################################################################
         return "client_update";
