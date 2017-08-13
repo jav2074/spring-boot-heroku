@@ -5,6 +5,8 @@ package com.sbn.app.controller;
 
 import com.sbn.app.entity.Client;
 import com.sbn.app.entity.ClientRepository;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -40,7 +42,9 @@ public class ClientController
     public String client(ModelMap model) 
     {
         //######################################################################
-        Iterable<Client> clients = clientRepository.findAll();
+        Iterable<Client> myIterator = clientRepository.findAll();
+        List<Client> clients = new ArrayList<>();
+        myIterator.forEach(clients::add);
         model.addAttribute("clients", clients);
         model.addAttribute("insertClient", new Client());
         //######################################################################
