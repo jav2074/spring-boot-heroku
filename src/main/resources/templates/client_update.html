@@ -64,17 +64,17 @@
                 <form th:object="${insertClient}" method="POST">
                     <div class="form-group">   
                         <label>Id</label>
-                        <input id="id" type="text" class="form-control" value="${client.id}" th:field="*{id}" disabled="true" />
+                        <input id="id" type="text" class="form-control" th:value="${client.id}" th:field="*{id}" disabled="true" />
                         <label>Name</label>
-                        <input id="name" type="text" class="form-control" value="${client.name}" th:field="*{name}"/>
+                        <input id="name" type="text" class="form-control" th:value="${client.name}" th:field="*{name}"/>
                         <label>LastName</label>                    
-                        <input id="lastname" type="text" class="form-control" value="${client.lastname}" th:field="*{lastname}"/>
+                        <input id="lastname" type="text" class="form-control" th:value="${client.lastname}" th:field="*{lastname}"/>
                         <label>Address</label>
-                        <input id="address" type="text" class="form-control" value="${client.address}" th:field="*{address}"/>
+                        <input id="address" type="text" class="form-control" th:value="${client.address}" th:field="*{address}"/>
                         <label>Phone</label>
-                        <input id="phone" type="text" class="form-control" value="${client.phone}" th:field="*{phone}"/>
+                        <input id="phone" type="text" class="form-control" th:value="${client.phone}" th:field="*{phone}"/>
                         <label>Email</label>
-                        <input id="email" type="text" class="form-control" value="${client.email}" th:field="*{email}"/>
+                        <input id="email" type="text" class="form-control" th:value="${client.email}" th:field="*{email}"/>
                     </div>
                     <button type="submit" class="btn btn-info">Update Client</button>
                 </form>
