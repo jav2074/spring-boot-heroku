@@ -64,17 +64,17 @@
                 <form th:object="${insertClient}" action="/client" method="POST">
                     <div class="form-group">   
                         <label>Id</label>  <!--  th:field="*{id}" -->
-                        <input id="id" type="text" class="form-control" th:value="${clientUD.id}" th:field="*{id}" disabled="true" />
+                        <input  th:id="id" th:name="id" type="text" class="form-control" th:value="${clientUD.id}" th:field="*{id}" disabled="true" />
                         <label>Name</label>
-                        <input id="name" type="text" class="form-control" th:value="${clientUD.name}" th:field="*{name}"/>
+                        <input th:id="name" th:name="name" type="text" class="form-control" th:value="${clientUD.name}" th:field="*{name}"/>
                         <label>LastName</label>                    
-                        <input id="lastname" type="text" class="form-control" th:value="${clientUD.lastname}" th:field="*{lastname}"/>
+                        <input th:id="lastname" th:name="lastname" type="text" class="form-control" th:value="${clientUD.lastname}" th:field="*{lastname}"/>
                         <label>Address</label>
-                        <input id="address" type="text" class="form-control" th:value="${clientUD.address}" th:field="*{address}"/>
+                        <input th:id="address" th:name="address" type="text" class="form-control" th:value="${clientUD.address}" th:field="*{address}"/>
                         <label>Phone</label>
-                        <input id="phone" type="text" class="form-control" th:value="${clientUD.phone}" th:field="*{phone}"/>
+                        <input th:id="phone" th:name="phone" type="text" class="form-control" th:value="${clientUD.phone}" th:field="*{phone}"/>
                         <label>Email</label>
-                        <input id="email" type="text" class="form-control" th:value="${clientUD.email}" th:field="*{email}"/>
+                        <input th:id="email" th:name="email" type="text" class="form-control" th:value="${clientUD.email}" th:field="*{email}"/>
                     </div>
                     <button type="submit" class="btn btn-info">Update Client</button>
                 </form>
