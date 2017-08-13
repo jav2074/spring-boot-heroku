@@ -62,13 +62,9 @@ public class ClientController
     //##########################################################################
     @RequestMapping(value = "/client/delete", method = RequestMethod.POST)
     public String deleteClient( ModelMap model, 
-                                @RequestParam("id_reg") @Valid String strID,
-                                BindingResult result) 
+                                @RequestParam("id_reg") String strID) 
     {
-        if (!result.hasErrors()) 
-        {
             clientRepository.delete(Long.parseLong(strID));
-        }
         return client(model);
     }
     //##########################################################################
