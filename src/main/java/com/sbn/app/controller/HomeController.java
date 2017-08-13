@@ -5,6 +5,8 @@ package com.sbn.app.controller;
 
 import com.sbn.app.entity.Client;
 import com.sbn.app.entity.ClientRepository;
+import com.sbn.app.entity.Product;
+import com.sbn.app.entity.ProductRepository;
 import com.sbn.app.entity.Record;
 import com.sbn.app.entity.RecordRepository;
 import java.util.List;
@@ -21,14 +23,18 @@ public class HomeController
     //##########################################################################
     private RecordRepository repository;
     private ClientRepository clientRepository;
+    private ProductRepository productRepository;
     //##########################################################################
     
     //##########################################################################
     @Autowired
-    public HomeController(RecordRepository repository, ClientRepository clientRepository)
+    public HomeController(  RecordRepository repository, 
+                            ClientRepository clientRepository, 
+                            ProductRepository productRepository )
     {
         this.repository = repository;
         this.clientRepository = clientRepository;
+        this.productRepository = productRepository;
     }
     //##########################################################################
 
@@ -43,6 +49,9 @@ public class HomeController
         //######################################################################
         List<Client> clients = clientRepository.findAll();
         model.addAttribute("clients", clients);
+        //######################################################################
+        List<Product> products = productRepository.findAll();
+        model.addAttribute("products", products);
         //######################################################################
         return "home";
     }
