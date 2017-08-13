@@ -95,8 +95,25 @@
                             <td th:text="${client.address}">Some text</td>
                             <td th:text="${client.phone}">Some text</td>
                             <td th:text="${client.email}">Some text</td>
-                            <td><button type="submit" class="btn btn-default">UpDate</button></td>
-                            <td><button type="submit" class="btn btn-default">Delete</button></td>
+                            <td>
+                               
+                                <form id="query" action="/client/query" method="POST"></form>
+                                <form id="update" action="/client/update" method="POST"></form>
+                                <form id="delete" action="/client/delete" method="POST"></form>
+
+                                <button class="btn btn-info"
+                                        form="query"
+                                        name="id_reg"
+                                        value="${client.id}">Query</button>
+                                <button class="btn btn-primary"
+                                        form="update"
+                                        name="id_reg"
+                                        value="${client.id}">Update</button>
+                                <button class="btn btn-danger"
+                                        form="delete"
+                                        name="id_reg"
+                                        value="${client.id}">Delete</button>
+                            </td>
                         </tr>
                     </tbody> 
                 </table>

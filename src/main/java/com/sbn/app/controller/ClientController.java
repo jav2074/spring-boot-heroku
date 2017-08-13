@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/client")
@@ -58,5 +59,17 @@ public class ClientController
         return client(model);
     }     
     //##########################################################################
+    //##########################################################################
+    @RequestMapping(value = "/client/delete", method = RequestMethod.POST)
+    public String deleteClient( ModelMap model, 
+                                @RequestParam("id_reg") @Valid Long id,
+                                BindingResult result) 
+    {
+        if (!result.hasErrors()) 
+        {
+            clientRepository.delete(id);
+        }
+        return client(model);
+    }
     //##########################################################################
 }
