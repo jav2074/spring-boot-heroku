@@ -7,8 +7,7 @@ import com.sbn.app.entity.Client;
 import com.sbn.app.entity.ClientRepository;
 import com.sbn.app.entity.Product;
 import com.sbn.app.entity.ProductRepository;
-import com.sbn.app.entity.Record;
-import com.sbn.app.entity.RecordRepository;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,18 +20,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController 
 {
     //##########################################################################
-    private RecordRepository repository;
     private ClientRepository clientRepository;
     private ProductRepository productRepository;
     //##########################################################################
     
     //##########################################################################
     @Autowired
-    public HomeController(  RecordRepository repository, 
-                            ClientRepository clientRepository, 
+    public HomeController(  ClientRepository clientRepository, 
                             ProductRepository productRepository )
     {
-        this.repository = repository;
         this.clientRepository = clientRepository;
         this.productRepository = productRepository;
     }
@@ -43,9 +39,6 @@ public class HomeController
     @RequestMapping(method = RequestMethod.GET)
     public String home(ModelMap model) 
     {
-        //######################################################################
-        List<Record> records = repository.findAll();
-        model.addAttribute("records", records);
         //######################################################################
         List<Client> clients = clientRepository.findAll();
         model.addAttribute("clients", clients);

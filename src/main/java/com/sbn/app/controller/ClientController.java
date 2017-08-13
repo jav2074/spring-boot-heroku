@@ -60,6 +60,15 @@ public class ClientController
     }     
     //##########################################################################
     //##########################################################################
+    @RequestMapping(value = "/client/update", method = RequestMethod.POST)
+    public String updateClient( ModelMap model, 
+                                @RequestParam("id_reg") String strID) 
+    {
+        Client client = clientRepository.findOne(Long.parseLong(strID));
+        
+        return client(model);
+    }
+    //##########################################################################
     @RequestMapping(value = "/client/delete", method = RequestMethod.POST)
     public String deleteClient( ModelMap model, 
                                 @RequestParam("id_reg") String strID) 

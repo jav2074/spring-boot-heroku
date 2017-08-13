@@ -74,7 +74,7 @@
                         <label>Email</label>
                         <input id="email" type="text" class="form-control" placeholder="Email" th:field="*{email}"/>
                     </div>
-                    <button type="submit" class="btn btn-default">New Client</button>
+                    <button type="submit" class="btn btn-info">Create Client</button>
                 </form>
             </div>
         </div>
@@ -96,15 +96,9 @@
                             <td th:text="${client.phone}">Some text</td>
                             <td th:text="${client.email}">Some text</td>
                             <td>
-                               
-                                <form id="query" action="/client/query" method="POST"></form>
                                 <form id="update" action="/client/update" method="POST"></form>
                                 <form id="delete" action="/client/delete" method="POST"></form>
 
-                                <button class="btn btn-info"
-                                        form="query"
-                                        th:name="id_reg"
-                                        th:value="${client.id}">Query</button>
                                 <button class="btn btn-primary"
                                         form="update"
                                         th:name="id_reg"
