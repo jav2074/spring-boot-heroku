@@ -43,7 +43,7 @@ public class ProductController
         model.addAttribute("products", products);
         model.addAttribute("insertProduct", new Product());
         //######################################################################
-        return "products";
+        return "product";
     }
     //##########################################################################
     @RequestMapping(method = RequestMethod.POST)
