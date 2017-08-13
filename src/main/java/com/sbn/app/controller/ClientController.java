@@ -40,7 +40,7 @@ public class ClientController
     public String client(ModelMap model) 
     {
         //######################################################################
-        List<Client> clients = (List<Client>) clientRepository.findAll();
+        Iterable<Client> clients = clientRepository.findAll();
         model.addAttribute("clients", clients);
         model.addAttribute("insertClient", new Client());
         //######################################################################
