@@ -64,7 +64,7 @@
                 <form th:object="${insertClient}" method="POST">
                     <div class="form-group">   
                         <label>Id</label>
-                        <input id="id" type="text" class="form-control" value="${client.id}" th:field="*{id}" disabled/>
+                        <input id="id" type="text" class="form-control" value="${client.id}" th:field="*{id}" disabled="true" />
                         <label>Name</label>
                         <input id="name" type="text" class="form-control" value="${client.name}" th:field="*{name}"/>
                         <label>LastName</label>                    
