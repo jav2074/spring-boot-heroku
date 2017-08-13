@@ -97,8 +97,33 @@
                     <tbody>
                         <tr th:each="record : ${records}">
                             <!--  -->
-                            <td th:text="${record.id}">Some text</td>
                             <td th:text="${record.data}">Some text</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- ################################################################### -->
+        <hr />
+        <!-- ################################################################### -->
+        <div class="page-header">
+            <h1>Product</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="product : ${products}">
+                            <!--  -->
+                            <td th:text="${product.id}">Some text</td>
+                            <td th:text="${product.name}">Some text</td>
+                            <td th:text="$ - ${product.price}">Some text</td>
+                            <td th:text="${product.quantity}">Some text</td>
                         </tr>
                     </tbody>
                 </table>
