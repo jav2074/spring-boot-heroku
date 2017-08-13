@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/client")
+//@RequestMapping("/client")
 public class ClientController 
 {
     //##########################################################################
@@ -36,7 +36,7 @@ public class ClientController
 
     
     //##########################################################################
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/client", method = RequestMethod.GET)
     public String client(ModelMap model) 
     {
         //######################################################################
@@ -47,7 +47,7 @@ public class ClientController
         return "client";
     }
     //##########################################################################
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/client", method = RequestMethod.POST)
     public String insertRegClient(ModelMap model, 
                              @ModelAttribute("insertClient") @Valid Client client,
                              BindingResult result) 
