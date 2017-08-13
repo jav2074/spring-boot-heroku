@@ -64,17 +64,17 @@
                 <form th:object="${insertClient}" method="POST">
                     <div class="form-group">   
                         <label>Id</label>  <!--  th:field="*{id}" -->
-                        <input id="id" type="text" class="form-control" value="${client.id}" disabled="true" />
+                        <input id="id" type="text" class="form-control" th:value="${client.id}" disabled="true" />
                         <label>Name</label>
-                        <input id="name" type="text" class="form-control" value="${client.name}"/>
+                        <input id="name" type="text" class="form-control" th:value="${client.name}"/>
                         <label>LastName</label>                    
-                        <input id="lastname" type="text" class="form-control" value="${client.lastname}"/>
+                        <input id="lastname" type="text" class="form-control" th:value="${client.lastname}"/>
                         <label>Address</label>
-                        <input id="address" type="text" class="form-control" value="${client.address}"/>
+                        <input id="address" type="text" class="form-control" th:value="${client.address}"/>
                         <label>Phone</label>
-                        <input id="phone" type="text" class="form-control" value="${client.phone}"/>
+                        <input id="phone" type="text" class="form-control" th:value="${client.phone}"/>
                         <label>Email</label>
-                        <input id="email" type="text" class="form-control" value="${client.email}"/>
+                        <input id="email" type="text" class="form-control" th:value="${client.email}"/>
                     </div>
                     <button type="submit" class="btn btn-info">Update Client</button>
                 </form>
