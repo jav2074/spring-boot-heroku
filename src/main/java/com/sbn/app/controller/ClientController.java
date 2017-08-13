@@ -40,7 +40,7 @@ public class ClientController
     public String client(ModelMap model) 
     {
         //######################################################################
-        List<Client> clients = clientRepository.findAll();
+        List<Client> clients = (List<Client>) clientRepository.findAll();
         model.addAttribute("clients", clients);
         model.addAttribute("insertClient", new Client());
         //######################################################################
@@ -54,7 +54,7 @@ public class ClientController
     {
         if (!result.hasErrors()) 
         {
-            clientRepository.saveAndFlush(client);  // saveOrUpdate / save / saveAndFlush
+            clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
         }
         return client(model);
     }     
