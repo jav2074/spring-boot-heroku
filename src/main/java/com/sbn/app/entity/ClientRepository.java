@@ -32,15 +32,16 @@ public interface ClientRepository extends JpaRepository <Client, Long>
     int updateAddress(@Param("companyId") Long companyId, @Param("address") String address);
     
     // https://stackoverflow.com/questions/32295688/spring-data-jpa-update-method
+    // UPDATE films SET kind = 'Dramatic' WHERE kind = 'Drama';
     @Modifying
-    @Query( "UPDATE Client u "
-            + "SET u.firstname = ?1, "
-            + "u.lastname = ?2, "
-            + "u.address = ?3, "
-            + "u.phone = ?4, "
-            + "u.email = ?5 "
-            + "WHERE u.id = ?6")
-    public void update( String firstname, 
+    @Query( "UPDATE client "
+            + "SET name = ?1, "
+            + "lastname = ?2, "
+            + "address = ?3, "
+            + "phone = ?4, "
+            + "email = ?5 "
+            + "WHERE id = ?6")
+    public void update( String name, 
                         String lastname,
                         String address, 
                         String phone, 
