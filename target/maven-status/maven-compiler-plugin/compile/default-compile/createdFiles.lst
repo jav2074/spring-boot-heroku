@@ -1,0 +1,5 @@
+com\heroku\demo\RecordRepository.class
+com\heroku\demo\Record.class
+com\heroku\demo\DatabaseConfig.class
+com\heroku\demo\HomeController.class
+com\heroku\demo\Application.class
