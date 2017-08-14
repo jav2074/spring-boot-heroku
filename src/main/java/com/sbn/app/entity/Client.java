@@ -134,9 +134,12 @@ public class Client implements Serializable {
         return true;
     }
 
+    
+    
+
     @Override
     public String toString() {
-        return "com.sbn.app.entity.Client[ id=" + id + " ]";
+        return "Client{" + "id=" + id + ", name=" + name + ", lastname=" + lastname + ", address=" + address + ", phone=" + phone + ", email=" + email + '}';
     }
     
 }
