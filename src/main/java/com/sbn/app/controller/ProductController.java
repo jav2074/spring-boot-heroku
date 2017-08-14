@@ -48,7 +48,7 @@ public class ProductController
     }
     //##########################################################################
     @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public String insertRegClient(ModelMap model, 
+    public String insertProduct(ModelMap model, 
                              @ModelAttribute("insertProduct") @Valid Product product,
                              BindingResult result) 
     {
