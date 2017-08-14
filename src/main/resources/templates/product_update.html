@@ -63,58 +63,20 @@
             <div class="col-md-12 col-lg-6">
                 <form th:object="${insertProduct}" method="POST">
                     <div class="form-group">   
+                        <label>Id</label>  <!--  th:field="*{id}" / disabled="true" -->
+                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${product.id}"/>
                         <label>Name</label>
-                        <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}"/>
+                        <input id="name" type="text" class="form-control" placeholder="Name" th:field="${product.name}"/>
                         <label>Price</label>                    
-                        <input id="price" type="text" class="form-control" placeholder="Price" th:field="*{price}"/>
+                        <input id="price" type="text" class="form-control" placeholder="Price" th:field="${product.price}"/>
                         <label>Quantity</label>
-                        <input id="quantity" type="text" class="form-control" placeholder="Quantity" th:field="*{quantity}"/>
+                        <input id="quantity" type="text" class="form-control" placeholder="Quantity" th:field="${product.quantity}"/>
                     </div>
-                    <button type="submit" class="btn btn-info">Create Product</button>
+                    <button type="submit" class="btn btn-info">Update Product</button>
                 </form>
             </div>
         </div>
         <hr />
-        <div class="row">
-            <div class="col-sm-12">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Product Records</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style='font-weight:bold;'>
-                            <td>Id</td>
-                            <td>Name</td>
-                            <td>Price</td>
-                            <td>Quantity</td>
-                            <td>Action</td>
-                        </tr>
-                        <tr th:each="product : ${products}">
-                            <!--  -->
-                            <td th:text="${product.id}">Some text</td>
-                            <td th:text="${product.name}">Some text</td>
-                            <td th:text="${product.price}">Some text</td>
-                            <td th:text="${product.quantity}">Some text</td>
-                            <td>
-                                <form id="update" action="/product/update" method="POST"></form>
-                                <form id="delete" action="/product/delete" method="POST"></form>
-
-                                <button class="btn btn-primary"
-                                        form="update"
-                                        th:name="id_reg"
-                                        th:value="${product.id}">Update</button>
-                                <button class="btn btn-danger"
-                                        form="delete"
-                                        th:name="id_reg"
-                                        th:value="${product.id}">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <!-- ################################################################### -->
     </div>
 <!-- Latest compiled and minified JavaScript -->

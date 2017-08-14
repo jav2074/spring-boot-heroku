@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/product")
@@ -58,5 +59,24 @@ public class ProductController
         return product(model);
     }     
     //##########################################################################
+    //##########################################################################
+    @RequestMapping(value = "/product/update", method = RequestMethod.POST)
+    public String updateClient( ModelMap model, 
+                                @RequestParam("id_reg") String strID) 
+    {
+        //######################################################################
+        Product product = productRepository.findOne(Long.parseLong(strID));
+        model.addAttribute("product", product);
+        //######################################################################
+        return "product_update";
+    }
+    //##########################################################################
+    @RequestMapping(value = "/product/delete", method = RequestMethod.POST)
+    public String deleteClient( ModelMap model, 
+                                @RequestParam("id_reg") String strID) 
+    {
+            productRepository.delete(Long.parseLong(strID));
+        return product(model);
+    }
     //##########################################################################
 }
