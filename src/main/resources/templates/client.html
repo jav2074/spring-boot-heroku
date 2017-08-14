@@ -61,7 +61,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-lg-6">
-                <form th:object="${insertClient}" method="POST">
+                <form th:object="${insertClient}" action="/client" method="POST">
                     <div class="form-group">
                         <label>Name</label>
                         <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}"/>

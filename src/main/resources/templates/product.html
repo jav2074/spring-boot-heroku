@@ -61,7 +61,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-lg-6">
-                <form th:object="${insertProduct}" method="POST">
+                <form th:object="${insertProduct}" action="/product" method="POST">
                     <div class="form-group">   
                         <label>Name</label>
                         <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}"/>
