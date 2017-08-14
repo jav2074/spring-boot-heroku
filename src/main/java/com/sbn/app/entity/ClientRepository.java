@@ -9,21 +9,25 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClientRepository extends JpaRepository <Client, Long> 
 {
-    // https://codingexplained.com/coding/java/spring-framework/updating-entities-with-update-query-spring-data-jpa
+//    // https://codingexplained.com/coding/java/spring-framework/updating-entities-with-update-query-spring-data-jpa
+//    @Modifying
+//    @Query("UPDATE Client c "
+//            + "SET c.name = :name "
+//            + "SET c.lastname = :lastname "
+//            + "SET c.address = :address "
+//            + "SET c.phone = :phone "
+//            + "SET c.email = :email "
+//            + "WHERE c.id = :id")
+//    int updateClient(
+//            @Param("id") Long id, 
+//            @Param("name") String name,
+//            @Param("lastname") String lastname,
+//            @Param("address") String address,
+//            @Param("phone") String phone,
+//            @Param("email") String email
+//    );
+    
     @Modifying
-    @Query("UPDATE Client c "
-            + "SET c.name = :name "
-            + "SET c.lastname = :lastname "
-            + "SET c.address = :address "
-            + "SET c.phone = :phone "
-            + "SET c.email = :email "
-            + "WHERE c.id = :id")
-    int updateClient(
-            @Param("id") Long id, 
-            @Param("name") String name,
-            @Param("lastname") String lastname,
-            @Param("address") String address,
-            @Param("phone") String phone,
-            @Param("email") String email
-    );
+    @Query("UPDATE Client c SET c.address = :address WHERE c.id = :companyId")
+    int updateAddress(@Param("companyId") Long companyId, @Param("address") String address);
 }

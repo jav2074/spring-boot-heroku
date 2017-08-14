@@ -55,14 +55,15 @@ public class ClientController
         if (!result.hasErrors()) 
         {
             if (clientRepository.exists(client.getId()))
-                clientRepository.updateClient(
-                        client.getId(), 
-                        client.getName(),
-                        client.getLastname(),
-                        client.getAddress(),
-                        client.getPhone(),
-                        client.getEmail()
-                );
+                clientRepository.updateAddress(client.getId(), client.getAddress());
+//                clientRepository.updateClient(
+//                        client.getId(), 
+//                        client.getName(),
+//                        client.getLastname(),
+//                        client.getAddress(),
+//                        client.getPhone(),
+//                        client.getEmail()
+//                );
             else
                 clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
         }
