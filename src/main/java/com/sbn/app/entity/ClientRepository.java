@@ -11,11 +11,11 @@ public interface ClientRepository extends JpaRepository <Client, Long>
 {
     @Modifying
     @Query("UPDATE Client c "
-            + "SET c.name = :name "
-            + "SET c.lastname = :lastname "
-            + "SET c.address = :address "
-            + "SET c.phone = :phone "
-            + "SET c.email = :email "
+            + "SET c.name = :client.name "
+            + "SET c.lastname = :client.lastname "
+            + "SET c.address = :client.address "
+            + "SET c.phone = :client.phone "
+            + "SET c.email = :client.email "
             + "WHERE c.id = :id")
-    int updateClient(@Param("id") Long id, @Param("Client") Client client);
+    int updateClient(@Param("id") Long id, @Param("client") Client client);
 }
