@@ -48,9 +48,10 @@ public class ClientController
     }
     //##########################################################################
     @RequestMapping(value = "/client", method = RequestMethod.POST)
-    public String insertRegClient(ModelMap model, 
-                             @ModelAttribute("insertClient") @Valid Client client,
-                             BindingResult result) 
+    public String insertRegClient(  ModelMap model, 
+                                    @ModelAttribute("insertClient") Client client) 
+//                             @ModelAttribute("insertClient") @Valid Client client,
+//                             BindingResult result) 
     {
 //        if (!result.hasErrors()) 
 //        {
