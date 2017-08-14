@@ -11,19 +11,20 @@ public interface ClientRepository extends JpaRepository <Client, Long>
     // https://stackoverflow.com/questions/40245322/spring-boot-jparepository-how-to-update-postgres-table
     // http://docs.spring.io/spring-data/jpa/docs/1.4.1.RELEASE/reference/html/jpa.repositories.html
     //@Modifying
-    @Query("update Client u set "
-            + "u.name =     ?1, "
-            + "u.lastname = ?2, "
-            + "u.address =  ?3, "
-            + "u.phone =    ?4, "
-            + "u.email =    ?5, "
-            + "where u.id = ?6")
-    int updateClient(   String name, 
-                        String lastname,
-                        String address, 
-                        String phone, 
-                        String email, 
-                        Long id     );
+//    @Query("update Client u set "
+//            + "u.name =     ?1, "
+//            + "u.lastname = ?2, "
+//            + "u.address =  ?3, "
+//            + "u.phone =    ?4, "
+//            + "u.email =    ?5, "
+//            + "where u.id = ?6")
+//    int updateClient(   String name, 
+//                        String lastname,
+//                        String address, 
+//                        String phone, 
+//                        String email, 
+//                        Long id     );
+    
     
 //    // https://codingexplained.com/coding/java/spring-framework/updating-entities-with-update-query-spring-data-jpa
 //    @Modifying

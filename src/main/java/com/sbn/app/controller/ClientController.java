@@ -52,7 +52,7 @@ public class ClientController
                                     @ModelAttribute("insertClient") @Valid Client client,
                                     BindingResult result) 
     {
-//        model.addAttribute("debug", client.toString());
+        model.addAttribute("debug", client.toString());
         if (!result.hasErrors()) 
         {
 //            if (clientRepository.exists(client.getId()))
