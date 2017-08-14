@@ -52,8 +52,8 @@ public class ClientController
                              @ModelAttribute("insertClient") @Valid Client client,
                              BindingResult result) 
     {
-        if (!result.hasErrors()) 
-        {
+//        if (!result.hasErrors()) 
+//        {
             if (clientRepository.exists(client.getId()))
                 clientRepository.updateAddress(client.getId(), client.getAddress());
 //                clientRepository.updateClient(
@@ -66,7 +66,7 @@ public class ClientController
 //                );
             else
                 clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
-        }
+//        }
         return client(model);
     }     
     //##########################################################################
