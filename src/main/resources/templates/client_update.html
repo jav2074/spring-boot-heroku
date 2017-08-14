@@ -63,8 +63,8 @@
             <div class="col-md-12 col-lg-6">
                 <form th:object="${insertClient}" action="/client" method="POST">
                     <div class="form-group">   
-                        <label>Id</label>  <!--  th:field="*{id}" -->
-                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${client.id}" disabled="true" />
+                        <label>Id</label>  <!--  th:field="*{id}" / disabled="true" -->
+                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${client.id}"/>
                         <label>Name</label>
                         <input th:id="name" th:name="name" type="text" class="form-control" th:field="${client.name}"/>
                         <label>LastName</label>                    
