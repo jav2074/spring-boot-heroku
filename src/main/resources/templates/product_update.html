@@ -61,10 +61,10 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-lg-6">
-                <form th:object="${insertProduct}" method="POST">
+                <form th:object="${insertProduct}" action="/product" method="POST">
                     <div class="form-group">   
                         <label>Id</label>  <!--  th:field="*{id}" / disabled="true" -->
-                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${product.id}"/>
+                        <input  id="id" name="id" type="text" class="form-control" th:field="${product.id}"/>
                         <label>Name</label>
                         <input id="name" type="text" class="form-control" placeholder="Name" th:field="${product.name}"/>
                         <label>Price</label>                    
