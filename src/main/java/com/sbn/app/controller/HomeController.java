@@ -1,6 +1,3 @@
-/*
-HEROKU - morning-shore-81565
- */
 package com.sbn.app.controller;
 
 import com.sbn.app.entity.Client;

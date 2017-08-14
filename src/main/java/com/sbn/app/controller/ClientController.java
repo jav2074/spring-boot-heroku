@@ -1,6 +1,3 @@
-/*
-HEROKU - morning-shore-81565
- */
 package com.sbn.app.controller;
 
 import com.sbn.app.entity.Client;
@@ -68,7 +65,6 @@ public class ClientController
         //######################################################################
         Client client = clientRepository.findOne(Long.parseLong(strID));
         model.addAttribute("client", client);
-//        model.addAttribute("insertClient", new Client());
         //######################################################################
         return "client_update";
     }
