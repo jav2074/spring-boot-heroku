@@ -49,25 +49,24 @@ public class ClientController
     //##########################################################################
     @RequestMapping(value = "/client", method = RequestMethod.POST)
     public String insertRegClient(  ModelMap model, 
-                                    @ModelAttribute("insertClient") Client client) 
-//                             @ModelAttribute("insertClient") @Valid Client client,
-//                             BindingResult result) 
+                                    @ModelAttribute("insertClient") @Valid Client client,
+                                    BindingResult result) 
     {
-//        if (!result.hasErrors()) 
-//        {
-//            if (clientRepository.exists(client.getId()))
-                clientRepository.updateAddress(client.getId(), client.getAddress());
-//                clientRepository.updateClient(
-//                        client.getId(), 
-//                        client.getName(),
-//                        client.getLastname(),
-//                        client.getAddress(),
-//                        client.getPhone(),
-//                        client.getEmail()
-//                );
-//            else
-//                clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
-//        }
+        if (!result.hasErrors()) 
+        {
+            if (clientRepository.exists(client.getId()))
+//                clientRepository.updateAddress(client.getId(), client.getAddress());
+                clientRepository.update(
+                        client.getName(),
+                        client.getLastname(),
+                        client.getAddress(),
+                        client.getPhone(),
+                        client.getEmail(),
+                        client.getId()
+                );
+            else
+                clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
+        }
         return client(model);
     }     
     //##########################################################################
