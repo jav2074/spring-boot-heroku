@@ -92,13 +92,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr style='font-weight:bold;'>
                             <td>Id</td>
                             <td>Name</td>
                             <td>Last Name</td>
                             <td>Address</td>
                             <td>Phone</td>
                             <td>Email</td>
+                            <td>Action</td>
                         </tr>
                         <tr th:each="client : ${clients}">
                             <td th:text="${client.id}">Some text</td>
