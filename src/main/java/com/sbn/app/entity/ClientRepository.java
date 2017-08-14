@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClientRepository extends JpaRepository <Client, Long> 
 {
+    // https://codingexplained.com/coding/java/spring-framework/updating-entities-with-update-query-spring-data-jpa
     @Modifying
     @Query("UPDATE Client c "
             + "SET c.name = :name "
