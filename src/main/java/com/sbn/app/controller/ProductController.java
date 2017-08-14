@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/product")
+//@RequestMapping("/product")
 public class ProductController 
 {
     //##########################################################################
@@ -36,7 +36,7 @@ public class ProductController
 
     
     //##########################################################################
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/product", method = RequestMethod.GET)
     public String product(ModelMap model) 
     {
         //######################################################################
@@ -47,7 +47,7 @@ public class ProductController
         return "product";
     }
     //##########################################################################
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/product", method = RequestMethod.POST)
     public String insertRegClient(ModelMap model, 
                              @ModelAttribute("insertProduct") @Valid Product product,
                              BindingResult result) 
