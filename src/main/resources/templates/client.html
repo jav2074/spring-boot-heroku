@@ -92,6 +92,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Last Name</td>
+                            <td>Address</td>
+                            <td>Phone</td>
+                            <td>Email</td>
+                        </tr>
                         <tr th:each="client : ${clients}">
                             <td th:text="${client.id}">Some text</td>
                             <td th:text="${client.name}">Some text</td>
@@ -117,12 +125,13 @@
                 </table>
             </div>
         </div>
-        <!-- ################################################################### -->
+        <!-- ################################################################### 
         <div>
             <p th:text="${debug}">
                 Debug
             </p>
-        </div>  
+        </div> 
+        -->
         <!-- ################################################################### -->
     </div>
 <!-- Latest compiled and minified JavaScript -->

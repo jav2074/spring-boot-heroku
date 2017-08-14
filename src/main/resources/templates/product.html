@@ -84,6 +84,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                        </tr>
                         <tr th:each="product : ${products}">
                             <!--  -->
                             <td th:text="${product.id}">Some text</td>

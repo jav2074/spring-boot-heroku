@@ -52,20 +52,9 @@ public class ClientController
                                     @ModelAttribute("insertClient") @Valid Client client,
                                     BindingResult result) 
     {
-        model.addAttribute("debug", client.toString());
+//        model.addAttribute("debug", client.toString());
         if (!result.hasErrors()) 
         {
-//            if (clientRepository.exists(client.getId()))
-////                clientRepository.updateAddress(client.getId(), client.getAddress());
-//                clientRepository.updateClient(
-//                        client.getName(),
-//                        client.getLastname(),
-//                        client.getAddress(),
-//                        client.getPhone(),
-//                        client.getEmail(),
-//                        client.getId()
-//                );
-//            else
                 clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
         }
         return client(model);

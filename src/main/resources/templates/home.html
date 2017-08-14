@@ -68,6 +68,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Last Name</td>
+                            <td>Address</td>
+                            <td>Phone</td>
+                            <td>Email</td>
+                        </tr>
                         <tr th:each="client : ${clients}">
                             <td th:text="${client.id}">Some text</td>
                             <td th:text="${client.name}">Some text</td>
@@ -121,6 +129,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                        </tr>
                         <tr th:each="product : ${products}">
                             <!--  -->
                             <td th:text="${product.id}">Some text</td>
