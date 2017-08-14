@@ -54,8 +54,8 @@ public class ClientController
     {
         if (!result.hasErrors()) 
         {
-            if (clientRepository.exists(client.getId()))
-                clientRepository.delete(client.getId());
+//            if (clientRepository.exists(client.getId()))
+//                clientRepository.delete(client.getId());
             clientRepository.save(client);  // saveOrUpdate / save / saveAndFlush
         }
         return client(model);
