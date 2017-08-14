@@ -12,7 +12,7 @@ CREATE TABLE COMPANY
    SALARY        REAL
 );
 */
-
+/*
 CREATE TABLE "public".client 
 (
     id          INTEGER NOT NULL PRIMARY KEY,
@@ -22,6 +22,7 @@ CREATE TABLE "public".client
     phone       VARCHAR(100) DEFAULT(''),
     email       VARCHAR(100) DEFAULT('')
 );
+*/
 CREATE TABLE "public".client 
 (
     id          SERIAL NOT NULL PRIMARY KEY,
