@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sbn</groupId>
-    <artifactId>spring-boot-heroku-demo-master</artifactId>
+    <artifactId>spring-boot-heroku-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <parent>
