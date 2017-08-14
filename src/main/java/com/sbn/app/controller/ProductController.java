@@ -61,7 +61,7 @@ public class ProductController
     //##########################################################################
     //##########################################################################
     @RequestMapping(value = "/product/update", method = RequestMethod.POST)
-    public String updateClient( ModelMap model, 
+    public String updateProduct( ModelMap model, 
                                 @RequestParam("id_reg") String strID) 
     {
         //######################################################################
@@ -72,7 +72,7 @@ public class ProductController
     }
     //##########################################################################
     @RequestMapping(value = "/product/delete", method = RequestMethod.POST)
-    public String deleteClient( ModelMap model, 
+    public String deleteProduct( ModelMap model, 
                                 @RequestParam("id_reg") String strID) 
     {
             productRepository.delete(Long.parseLong(strID));
