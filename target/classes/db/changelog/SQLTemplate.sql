@@ -1,6 +1,11 @@
 /**
  * Author:  jsibona
  * Created: 10/08/2017
+SELECT * FROM "public".record LIMIT 100;
+SELECT * FROM "public".databasechangelog LIMIT 100;
+SELECT * FROM "public".databasechangeloglock LIMIT 100;
+SELECT * FROM "public".client LIMIT 100;
+SELECT * FROM "public".product LIMIT 100;
  */
 
 CREATE TABLE "public".client 
