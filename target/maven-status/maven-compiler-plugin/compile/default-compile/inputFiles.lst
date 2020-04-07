@@ -1,5 +1,9 @@
-C:\Program Files (x86)\Heroku\_Proyectos_\spring-boot-heroku-demo-master\src\main\java\com\heroku\demo\DatabaseConfig.java
-C:\Program Files (x86)\Heroku\_Proyectos_\spring-boot-heroku-demo-master\src\main\java\com\heroku\demo\Record.java
-C:\Program Files (x86)\Heroku\_Proyectos_\spring-boot-heroku-demo-master\src\main\java\com\heroku\demo\HomeController.java
-C:\Program Files (x86)\Heroku\_Proyectos_\spring-boot-heroku-demo-master\src\main\java\com\heroku\demo\RecordRepository.java
-C:\Program Files (x86)\Heroku\_Proyectos_\spring-boot-heroku-demo-master\src\main\java\com\heroku\demo\Application.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\controller\ClientController.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\entity\ProductRepository.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\entity\ClientRepository.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\entity\Product.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\Application.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\controller\HomeController.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\db\DatabaseConfig.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\controller\ProductController.java
+D:\_PROYECTOS_\Informatica\java\spring-boot-heroku\src\main\java\com\sbn\app\entity\Client.java
