@@ -11,8 +11,10 @@
     <properties>
       <property 
         name="javax.persistence.jdbc.url" 
-        value="jdbc:postgresql://ec2-184-72-230-93.compute-1.amazonaws.com:5432/dbhmcpk9ur3md4?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"
+        value="jdbc:postgres://pgrhpxaaqxmsmj:0e9edd79da59c5bdba5f7671957a22c33fd1decdd4903d4031e0ffc94cc9295b@ec2-52-200-119-0.compute-1.amazonaws.com:5432/d8smebq5ejrs2k?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"
       />
+      <!--value="jdbc:postgresql://ec2-184-72-230-93.compute-1.amazonaws.com:5432/dbhmcpk9ur3md4?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory"-->
+
       <property
         name="javax.persistence.jdbc.user" 
         value="pgrhpxaaqxmsmj"
