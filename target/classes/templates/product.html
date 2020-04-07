@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" type="image/png" href="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAlaAAAAJDRiODU4NjQ2LWVhODctNDkyNy05ZGQwLTljYjkxMmJkYmQzNw.png" />
+    
+    <title>My CRUD Spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Optional theme --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+</head>
+<body>
+    <!-- ################################################################### -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <!-- ########################################################### -->
+                <li> <!-- https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAlaAAAAJDRiODU4NjQ2LWVhODctNDkyNy05ZGQwLTljYjkxMmJkYmQzNw.png -->
+                        <img 
+                            src="http://4.bp.blogspot.com/-xzodOH4rIr4/UyPckEp3knI/AAAAAAAANk8/M8HIaeXmS3s/s1600/Logo+Mitrol.png" 
+                            width="50" 
+                            height="50"></img>
+                </li>
+                <!-- ########################################################### -->
+                <li class="active">
+                    <a rel="nofollow" href="/">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Home
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/product">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        Products
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/client">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Clients
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                
+            </ul>
+        </div>
+    </nav>
+    <!-- ################################################################### -->
+    <br/>
+    <!-- ################################################################### -->
+    <div class="container">
+        <!-- ################################################################### -->
+        <div class="page-header">
+            <h1>Product - CRUD Spring</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <form th:object="${insertProduct}" action="/product" method="POST">
+                    <div class="form-group">   
+                        <label>Name</label>
+                        <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}"/>
+                        <label>Price</label>                    
+                        <input id="price" type="text" class="form-control" placeholder="Price" th:field="*{price}"/>
+                        <label>Quantity</label>
+                        <input id="quantity" type="text" class="form-control" placeholder="Quantity" th:field="*{quantity}"/>
+                    </div>
+                    <button type="submit" class="btn btn-info">Create Product</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Product Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style='font-weight:bold;'>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Action</td>
+                        </tr>
+                        <tr th:each="product : ${products}">
+                            <!--  -->
+                            <td th:text="${product.id}">Some text</td>
+                            <td th:text="${product.name}">Some text</td>
+                            <td th:text="${product.price}">Some text</td>
+                            <td th:text="${product.quantity}">Some text</td>
+                            <td>
+                                <form id="update" action="/product/update" method="POST"></form>
+                                <form id="delete" action="/product/delete" method="POST"></form>
+
+                                <button class="btn btn-primary"
+                                        form="update"
+                                        th:name="id_reg"
+                                        th:value="${product.id}">Update</button>
+                                <button class="btn btn-danger"
+                                        form="delete"
+                                        th:name="id_reg"
+                                        th:value="${product.id}">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- ################################################################### -->
+    </div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

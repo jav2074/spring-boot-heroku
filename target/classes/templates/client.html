@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" type="image/png" href="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAlaAAAAJDRiODU4NjQ2LWVhODctNDkyNy05ZGQwLTljYjkxMmJkYmQzNw.png" />
+    
+    <title>My CRUD Spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Optional theme --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+</head>
+<body>
+    <!-- ################################################################### -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <!-- ########################################################### -->
+                <li> <!--  -->
+                        <img 
+                            src="http://4.bp.blogspot.com/-xzodOH4rIr4/UyPckEp3knI/AAAAAAAANk8/M8HIaeXmS3s/s1600/Logo+Mitrol.png" 
+                            width="50" 
+                            height="50"></img>
+                </li>
+                <!-- ########################################################### -->
+                <li class="active">
+                    <a rel="nofollow" href="/">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Home
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/product">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        Products
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/client">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Clients
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                
+            </ul>
+        </div>
+    </nav>
+    <!-- ################################################################### -->
+    <br/>
+    <!-- ################################################################### -->
+    <div class="container">
+        <!-- ################################################################### -->
+        <div class="page-header">
+            <h1>Client - CRUD Spring</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <form th:object="${insertClient}" action="/client" method="POST">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input id="name" type="text" class="form-control" placeholder="Name" th:field="*{name}"/>
+                        <label>LastName</label>                    
+                        <input id="lastname" type="text" class="form-control" placeholder="Last Name" th:field="*{lastname}"/>
+                        <label>Address</label>
+                        <input id="address" type="text" class="form-control" placeholder="Address" th:field="*{address}"/>
+                        <label>Phone</label>
+                        <input id="phone" type="text" class="form-control" placeholder="Phone" th:field="*{phone}"/>
+                        <label>Email</label>
+                        <input id="email" type="text" class="form-control" placeholder="Email" th:field="*{email}"/>
+                    </div>
+                    <button type="submit" class="btn btn-info">Create Client</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Client Records</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style='font-weight:bold;'>
+                            <td>Id</td>
+                            <td>Name</td>
+                            <td>Last Name</td>
+                            <td>Address</td>
+                            <td>Phone</td>
+                            <td>Email</td>
+                            <td>Action</td>
+                        </tr>
+                        <tr th:each="client : ${clients}">
+                            <td th:text="${client.id}">Some text</td>
+                            <td th:text="${client.name}">Some text</td>
+                            <td th:text="${client.lastname}">Some text</td>
+                            <td th:text="${client.address}">Some text</td>
+                            <td th:text="${client.phone}">Some text</td>
+                            <td th:text="${client.email}">Some text</td>
+                            <td>
+                                <form id="update" action="/client/update" method="POST"></form>
+                                <form id="delete" action="/client/delete" method="POST"></form>
+
+                                <button class="btn btn-primary"
+                                        form="update"
+                                        th:name="id_reg"
+                                        th:value="${client.id}">Update</button>
+                                <button class="btn btn-danger"
+                                        form="delete"
+                                        th:name="id_reg"
+                                        th:value="${client.id}">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody> 
+                </table>
+            </div>
+        </div>
+        <!-- ################################################################### 
+        <div>
+            <p th:text="${debug}">
+                Debug
+            </p>
+        </div> 
+        -->
+        <!-- ################################################################### -->
+    </div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

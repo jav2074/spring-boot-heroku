@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" type="image/png" href="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAlaAAAAJDRiODU4NjQ2LWVhODctNDkyNy05ZGQwLTljYjkxMmJkYmQzNw.png" />
+    
+    <title>My CRUD Spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <!-- Optional theme --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+</head>
+<body>
+    <!-- ################################################################### -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <!-- ########################################################### -->
+                <li> <!-- https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAlaAAAAJDRiODU4NjQ2LWVhODctNDkyNy05ZGQwLTljYjkxMmJkYmQzNw.png -->
+                        <img 
+                            src="http://4.bp.blogspot.com/-xzodOH4rIr4/UyPckEp3knI/AAAAAAAANk8/M8HIaeXmS3s/s1600/Logo+Mitrol.png" 
+                            width="50" 
+                            height="50"></img>
+                </li>
+                <!-- ########################################################### -->
+                <li class="active">
+                    <a rel="nofollow" href="/">
+                        <span class="glyphicon glyphicon-home"></span>
+                        Home
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/product">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        Products
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                <li class="navbar-right">
+                    <a rel="nofollow" href="/client">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Clients
+                    </a>
+                </li>
+                <!-- ########################################################### -->
+                
+            </ul>
+        </div>
+    </nav>
+    <!-- ################################################################### -->
+    <br/>
+    <!-- ################################################################### -->
+    <div class="container">
+        <!-- ################################################################### -->
+        <div class="page-header">
+            <h1>Client - CRUD Spring</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <form th:object="${insertClient}" action="/client" method="POST">
+                    <div class="form-group">   
+                        <label>Id</label>  <!--  th:field="*{id}" / disabled="true" -->
+                        <input  th:id="id" th:name="id" type="text" class="form-control" th:field="${client.id}"/>
+                        <label>Name</label>
+                        <input th:id="name" th:name="name" type="text" class="form-control" th:field="${client.name}"/>
+                        <label>LastName</label>                    
+                        <input th:id="lastname" th:name="lastname" type="text" class="form-control" th:field="${client.lastname}"/>
+                        <label>Address</label>
+                        <input th:id="address" th:name="address" type="text" class="form-control" th:field="${client.address}"/>
+                        <label>Phone</label>
+                        <input th:id="phone" th:name="phone" type="text" class="form-control" th:field="${client.phone}"/>
+                        <label>Email</label>
+                        <input th:id="email" th:name="email" type="text" class="form-control" th:field="${client.email}"/>
+                    </div>
+                    <button type="submit" class="btn btn-info">Update Client</button>
+                </form>
+            </div>
+        </div>
+        <hr />
+        <!-- ################################################################### -->
+    </div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
