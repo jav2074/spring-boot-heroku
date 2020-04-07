@@ -11,3 +11,19 @@ application on [Heroku](http://heroku.com). For more information see the Dev Cen
 ## License
 
 Code is under the [Apache Licence v2](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
+
+
+
+
+…or create a new repository on the command line
+echo "# spring-boot-heroku" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/jav2074/spring-boot-heroku.git
+git push -u origin master
+                
+…or push an existing repository from the command line
+git remote add origin https://github.com/jav2074/spring-boot-heroku.git
+git push -u origin master
